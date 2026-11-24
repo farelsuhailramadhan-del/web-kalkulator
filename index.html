@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="calculator-container">
+        <!-- Menu Tab Atas -->
+        <div class="nav-tabs">
+            <span class="active">Kalkulator</span>
+        </div>
+
+        <!-- Layar Tampilan (Display) -->
+        <div class="display-section">
+            <div id="expression">0</div>
+            <div id="result"></div>
+        </div>
+
+        <!-- Tombol Riwayat di Atas -->
+        <div class="sub-actions">
+            <div id="historyBtn" title="Riwayat" onclick="toggleHistory()">🕒</div>
+        </div>
+
+        <!-- Wadah Utama Bawah (Keypad atau Panel Riwayat) -->
+        <div class="bottom-area">
+            <!-- Panel Riwayat (Tersembunyi secara default) -->
+            <div id="historyPanel" class="history-panel hidden">
+                <div id="historyList" class="history-list">
+                    <p class="empty-history">Belum ada riwayat perhitungan</p>
+                </div>
+                <button class="btn-clear-history" onclick="clearHistory()">Hapus</button>
+            </div>
+
+            <!-- Papan Tombol (Keypad) - Tombol ( ) ada di sini -->
+          <div id="keypad" class="keypad">
+                <!-- Baris 1 -->
+                <button class="btn btn-clear" onclick="clearCalculator()">AC</button>
+                <button class="btn btn-operator" onclick="appendParentheses()">( )</button>
+                <button class="btn btn-operator" onclick="appendValue('%')">%</button>
+                <button class="btn btn-operator-col" onclick="appendValue('÷')">÷</button>
+
+                <!-- Baris 2 -->
+                <button class="btn" onclick="appendValue('7')">7</button>
+                <button class="btn" onclick="appendValue('8')">8</button>
+                <button class="btn" onclick="appendValue('9')">9</button>
+                <button class="btn btn-operator-col" onclick="appendValue('×')">×</button>
+
+                <!-- Baris 3 -->
+                <button class="btn" onclick="appendValue('4')">4</button>
+                <button class="btn" onclick="appendValue('5')">5</button>
+                <button class="btn" onclick="appendValue('6')">6</button>
+                <button class="btn btn-operator-col" onclick="appendValue('-')">-</button>
+
+                <!-- Baris 4 -->
+                <button class="btn" onclick="appendValue('1')">1</button>
+                <button class="btn" onclick="appendValue('2')">2</button>
+                <button class="btn" onclick="appendValue('3')">3</button>
+                <button class="btn btn-operator-col" onclick="appendValue('+')">+</button>
+
+                <!-- Baris 5 -->
+                <button class="btn" onclick="appendValue('0')">0</button>
+                <button class="btn" onclick="appendValue(',')">,</button>
+                <button class="btn btn-operator" onclick="backspace()">⌫</button>
+                <button class="btn btn-equals" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
